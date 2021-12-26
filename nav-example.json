@@ -1,0 +1,94 @@
+[
+  {
+    "name": "abuelo a",
+    "id": "abuelo-a",
+    "url": "#",
+    "active": false,
+    "mobile": true,
+    "level": 1,
+    "children": [
+      {
+        "name": "padre a1",
+        "id": "padre-a1",
+        "url": "#",
+        "active": false,
+        "mobile": true,
+        "level": 2,
+        "children": []
+      },
+      {
+        "name": "padre a2",
+        "id": "padre-a2",
+        "url": "#",
+        "active": false,
+        "mobile": true,
+        "level": 2,
+        "children": [
+          {
+            "name": "hijo a2-1",
+            "id": "hijo-a2-1",
+            "url": "#",
+            "active": false,
+            "mobile": true,
+            "level": 3,
+            "children": []
+          },
+          {
+            "name": "hijo a2-2",
+            "id": "hijo-a2-2",
+            "url": "#",
+            "active": false,
+            "mobile": true,
+            "level": 3,
+            "children": []
+          },
+          {
+            "name": "hijo a2-3",
+            "id": "hijo-a2-3",
+            "url": "#",
+            "active": false,
+            "mobile": true,
+            "level": 3,
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "padre a3",
+        "id": "padre-a3",
+        "url": "#",
+        "active": false,
+        "mobile": true,
+        "level": 2,
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "abuelo b",
+    "id": "abuelo-b",
+    "url": "#",
+    "active": false,
+    "mobile": true,
+    "level": 1,
+    "children": []
+  },
+  {
+    "name": "abuelo c",
+    "id": "abuelo-c",
+    "url": "#",
+    "active": false,
+    "mobile": true,
+    "level": 1,
+    "children": []
+  },
+  {
+    "name": "abuelo d",
+    "id": "abuelo-d",
+    "url": "#",
+    "active": false,
+    "mobile": true,
+    "level": 1,
+    "children": []
+  }
+]
