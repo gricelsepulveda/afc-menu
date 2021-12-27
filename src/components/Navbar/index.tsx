@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import './navbar.scss'
 
 export interface NavLink {
   name?: string,
@@ -23,17 +24,24 @@ export default (props:NavbarProps) => {
     const {id, level, name, url, children } = link
     return (
       <li 
-      className={`afc-nav-link ${link.active ? 'active' : ''}`}
+      className={`afc-nav-link ${link.active ? 'active' : ''} ${children?.length == 0 ? 'no-childs' : ''}`}
       key={`afc-link-${id}-${level}-${index}`}
       >
         <a href={url}>
-          {name}
+          <span>{name}</span>
         </a>
         {
-          checker ? 
-          <ul className='afc-nav-links'>
-            { children?.map((item:NavLink, index:number) => ( renderLink(item, index))) }
-          </ul>
+          checker ?
+          <>
+            {
+              level && level == 1 ? 
+                <button>+</button> 
+              : null
+            }
+            <ul className={`afc-nav-ul level-${level ? + level + 1 : 1} `}>
+              { children?.map((item:NavLink, index:number) => ( renderLink(item, index))) }
+            </ul>
+          </>
           : null
         }
       </li>
@@ -42,7 +50,7 @@ export default (props:NavbarProps) => {
 
   return (
     <nav className={`afc-navbar ${props.open == true ? 'active' : ''}`}>
-      <ul className='afc-nav-links'>
+      <ul className='afc-nav-ul level-1'>
         {
           links ? links.map((item:NavLink, index:number) => (
             renderLink(item, index)

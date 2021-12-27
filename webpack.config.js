@@ -2,18 +2,20 @@ const { resolve } = require('path')
 
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const isDevelopment = process.env.NODE_ENV !== 'production'
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
   entry: {
     main: resolve('./src/index.tsx')
   },
+  output: {
+    publicPath: '/'
+  },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: ['awesome-typescript-loader?module=es6'],
-        exclude: [/node_modules/]
+        loader: ['ts-loader'],
+        exclude: [/node_modules/],
       },
       {
         test: /\.js$/,
@@ -45,7 +47,7 @@ const config = {
         ]
       },
       {
-        test: /\.(jpe?g|png|gif|svg|ico|ttf|woff2|woff|eot)$/,
+        test: /\.(jpe?g|png|gif|svg|ico|ttf|woff2|woff|eot|otf)$/,
         loader: "file-loader",
         options: {
           name: "[hash].[name].[ext]",
@@ -57,12 +59,15 @@ const config = {
   resolve: {
     extensions: ['.js', '.ts', '.tsx', '.scss']
   },
+  devServer: {
+    historyApiFallback: true
+  },
   plugins: [
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html'
     })
-  ]
+  ],
 }
 
 module.exports = config

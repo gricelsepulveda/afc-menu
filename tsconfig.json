@@ -1,16 +1,21 @@
-
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "strict": true,
+    "declaration": true,
+    "declarationMap": true,
+    "removeComments": true,
     "outDir": "./dist",
+    "rootDir": "./src",
+    "baseUrl": "./",
     "target": "es5",
+    "forceConsistentCasingInFileNames": true,
+    "downlevelIteration": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": false,
     "checkJs": false,
     "skipLibCheck": false,
     "noImplicitAny": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -18,5 +23,5 @@
     "isolatedModules": true,
     "jsx": "react"
   },
-  "exclude": ["node_modules", "webpack.*.js"]
+  "exclude": ["node_modules", "dist", "webpack.*.js"]
 }
